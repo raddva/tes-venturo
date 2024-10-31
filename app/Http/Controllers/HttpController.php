@@ -19,4 +19,14 @@ class HttpController extends Controller
 
         return view('main', compact('year', 'menu', 'transaksi'));
     }
+
+    public function getDetails(Request $request)
+    {
+        $menu = $request->input('menu');
+        $month = $request->input('month');
+        $year = $request->input('year');
+        $transaksi = json_decode($request->input('transaksi'), true);
+
+        return view('details', compact('year', 'month', 'menu', 'transaksi'));
+    }
 }

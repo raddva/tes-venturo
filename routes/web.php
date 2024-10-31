@@ -14,4 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('index');
+// });
 Route::get('/', [HttpController::class, 'getData'])->name('transaksi');
+Route::post('detail', [HttpController::class, 'getDetails'])->name('detail');
